@@ -30,43 +30,26 @@ const styles = StyleSheet.create({
         marginHorizontal: "4%",
         marginVertical: "2%",
         padding: "5%",
-        borderRadius: 20,
         backgroundColor: "lightgrey",
-        shadowColor: 'red',
-        shadowOpacity: 0.8,
-        shadowOffset: { width: 0, height: 0},
-        shadowRadius: 10,
+        borderRadius: 10,
         elevation: 10,
-        borderColor: "gold",
-        borderWidth: 1,
+        shadowColor: 'white',
     },
     text: {
         justifyContent: "center",
-        maxWidth: "80%",
-        // backgroundColor: "#ffa",
-        borderColor: "red",
-        borderWidth: 1
+        maxWidth: "80%", // workaround: wrap longer names
     },
     name: {
         fontSize: 32,
         fontWeight: "bold",
-        backgroundColor: "#bbbbbb",
     },
     short: {
         fontSize: 16,
         fontStyle: "normal",
-        backgroundColor: "#cccccc",
     },
     image: {
-        // position: "absolute",
-        // right: "1%",
-        // maxWidth: "20%",
-        // maxHeight: "20%",
         width: 110,
         height: 110,
-        backgroundColor: "#ddd",
         tintColor: "#000",
-        borderColor: "blue",
-        borderWidth: 1,
     }
 })

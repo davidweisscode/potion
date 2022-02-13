@@ -25,19 +25,19 @@ export default function App() {
                     options={({ route }) => ({
                         title: "Potion",
                         headerStyle: {
-                            backgroundColor: "#888888",
+                            backgroundColor: "#888",
                         },
-                        headerTintColor: "#222",
+                        headerTintColor: "#000",
                         headerTitleStyle: {
                             fontWeight: "bold",
-                            fontSize: 30,
+                            fontSize: 32,
                             // fontFamily: TODO,
-                            color: "#555",
+                            color: "#000",
                         },
                         headerShadowVisible: true,
                         headerTransparent: false,
                         headerTitleAlign: "center",
-                        animationTypeForReplace: "push",
+                        // animationTypeForReplace: "push",
                         animation: "slide_from_right",
                     })}
                 />
@@ -47,14 +47,14 @@ export default function App() {
                     options={({ route }) => ({
                         title: route.params.name,
                         headerStyle: {
-                            backgroundColor: "#888888",
+                            backgroundColor: "#888",
                         },
-                        headerTintColor: "#222",
+                        headerTintColor: "#000",
                         headerTitleStyle: {
                             fontWeight: "bold",
-                            fontSize: 30,
+                            fontSize: 32,
                             // fontFamily: TODO,
-                            color: "#555",
+                            color: "#000",
                         },
                         headerShadowVisible: true,
                         headerTransparent: false,
