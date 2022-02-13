@@ -1,39 +1,69 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import Cocktail from "./components/Cocktail";
 import { cocktails } from "./cocktails.js";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ListScreen } from "./screens/List";
+import { RecipeScreen } from "./screens/Recipe";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <View style={styles.safecontainer}>
-                <StatusBar backgroundColor="#000000" style="light" />
-                <FlatList
-                    data={cocktails}
-                    renderItem={({ item }) => (
-                        <Cocktail
-                            key={item.id}
-                            name={item.name}
-                            ingredients={item.ingredients}
-                            image={item.image}
-                        ></Cocktail>
-                    )}
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="List"
+                screenOptions={{
+                    headerTintColor: "white",
+                    headerStyle: { backgroundColor: "tomato" },
+                }}
+            >
+                <Stack.Screen
+                    name="List"
+                    component={ListScreen}
+                    options={({ route }) => ({
+                        title: "Potion",
+                        headerStyle: {
+                            backgroundColor: "#888888",
+                        },
+                        headerTintColor: "#222",
+                        headerTitleStyle: {
+                            fontWeight: "bold",
+                            fontSize: 30,
+                            // fontFamily: TODO,
+                            color: "#555",
+                        },
+                        headerShadowVisible: true,
+                        headerTransparent: false,
+                        headerTitleAlign: "center",
+                        animationTypeForReplace: "push",
+                        animation: "slide_from_right",
+                    })}
                 />
-            </View>
-        </View>
+                <Stack.Screen
+                    name="Recipe"
+                    component={RecipeScreen}
+                    options={({ route }) => ({
+                        title: route.params.name,
+                        headerStyle: {
+                            backgroundColor: "#888888",
+                        },
+                        headerTintColor: "#222",
+                        headerTitleStyle: {
+                            fontWeight: "bold",
+                            fontSize: 30,
+                            // fontFamily: TODO,
+                            color: "#555",
+                        },
+                        headerShadowVisible: true,
+                        headerTransparent: false,
+                        headerTitleAlign: "center",
+                        animationTypeForReplace: "push",
+                        animation: "slide_from_right",
+                    })}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#aaaaaa",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-    },
-    safecontainer: {
-        // Status bar workaround
-        marginTop: 100,
-    },
-});
