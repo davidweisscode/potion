@@ -13,21 +13,21 @@ export function RecipeScreen({ route, navigation }) {
             <Text style={styles.name}>{recipe.name}</Text>
             <View style={{ flex: 1, width: 404 }}>
                 <View style={{ flex: 1, flexDirection: "row" }}>
-                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                         <Text style={{fontWeight: "bold"}}>Glass: </Text>
                         <Text>{recipe.glassware}</Text>
                     </View>
-                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                         <Text style={{fontWeight: "bold"}}>Ice: </Text>
                         <Text>{recipe.ice}</Text>
                     </View>
                 </View>
                 <View style={{ flex: 1, flexDirection: "row" }}>
-                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                         <Text style={{fontWeight: "bold"}}>Method: </Text>
                         <Text>{recipe.method}</Text>
                     </View>
-                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                         <Text style={{fontWeight: "bold"}}>Garnish: </Text>
                         <Text>{recipe.garnish}</Text>
                     </View>
@@ -42,7 +42,7 @@ export function RecipeScreen({ route, navigation }) {
                         )
                     })}
                 </View>
-                <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                     <Text style={{fontWeight: "bold"}}>Optional: </Text>
                     <Text>{recipe.optional}</Text>
                 </View>
