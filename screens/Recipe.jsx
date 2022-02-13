@@ -9,17 +9,44 @@ export function RecipeScreen({ route, navigation }) {
 
     return (
         <View style={styles.container}>
-            <Text>Recipe Screen</Text>
-            <Text>myParam: {name}</Text>
-            {/* <Text>myParam: {JSON.stringify(name)}</Text> */}
-
-            <Text style={styles.name}>{recipe.name}</Text>
-            {Object.entries(recipe.ingredients).map(([key, value]) => {
-                return (
-                    <Text style={styles.ingredient} key={recipe.key}>{key} {value}</Text>
-                )
-            })}
             <Image source={images[recipe.image]} style={styles.image}></Image>
+            <Text style={styles.name}>{recipe.name}</Text>
+            <View style={{ flex: 1, width: 404 }}>
+                <View style={{ flex: 1, flexDirection: "row" }}>
+                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                        <Text style={{fontWeight: "bold"}}>Glass: </Text>
+                        <Text>{recipe.glassware}</Text>
+                    </View>
+                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                        <Text style={{fontWeight: "bold"}}>Ice: </Text>
+                        <Text>{recipe.ice}</Text>
+                    </View>
+                </View>
+                <View style={{ flex: 1, flexDirection: "row" }}>
+                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                        <Text style={{fontWeight: "bold"}}>Method: </Text>
+                        <Text>{recipe.method}</Text>
+                    </View>
+                    <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                        <Text style={{fontWeight: "bold"}}>Garnish: </Text>
+                        <Text>{recipe.garnish}</Text>
+                    </View>
+                </View>
+                <View style={{ flex: 2, padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    {Object.entries(recipe.ingredients).map(([key, value]) => {
+                        return (
+                            <View style={styles.ingredientRow}>
+                                <Text style={styles.ingredient} key={recipe.key}>{key}</Text>
+                                <Text style={styles.ingredient} key={recipe.key}>{value}</Text>
+                            </View>
+                        )
+                    })}
+                </View>
+                <View style={{ flex: 1, flexDirection: "row", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                    <Text style={{fontWeight: "bold"}}>Optional: </Text>
+                    <Text>{recipe.optional}</Text>
+                </View>
+            </View>
         </View>
     );
 }
@@ -28,31 +55,25 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center"
-    },
-    item: {
+        justifyContent: "flex-start",
         padding: "5%",
-        borderRadius: 20,
         backgroundColor: "lightgrey",
-        marginHorizontal: "4%",
-        marginVertical: "2%",
-        minWidth: "90%",
-    },
-    name: {
-        fontSize: 24,
-        fontWeight: "bold",
-        backgroundColor: "#bbbbbb",
-    },
-    ingredient: {
-        fontSize: 16,
-        backgroundColor: "#cccccc",
     },
     image: {
-        // maxWidth: "20%",
-        // maxHeight: "20%",
-        width: 200,
-        height: 200,
-        backgroundColor: "#ddd",
+        width: 400,
+        height: 400,
         tintColor: "#000",
-    }
+    },
+    name: {
+        fontSize: 32,
+        fontWeight: "bold",
+        marginBottom: 10,
+    },
+    ingredientRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+    ingredient: {
+        
+    },
 })
