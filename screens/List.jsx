@@ -11,7 +11,7 @@ export function ListScreen({ navigation }) {
                 data={cocktails}
                 renderItem={({ index, item }) => {
                     return <Cocktail
-                        key={item.id}
+                        id={item.id}
                         name={item.name}
                         short={item.short}
                         image={item.image}
