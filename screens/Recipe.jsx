@@ -10,7 +10,6 @@ export function RecipeScreen({ route, navigation }) {
     return (
         <View style={styles.container}>
             <Image source={images[recipe.image]} style={styles.image}></Image>
-            <Text style={styles.name}>{recipe.name}</Text>
             <View style={{ flex: 1, width: "100%" }}>
                 <View style={{ flex: 1, flexDirection: "row" }}>
                     <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
@@ -32,7 +31,7 @@ export function RecipeScreen({ route, navigation }) {
                         <Text>{recipe.garnish}</Text>
                     </View>
                 </View>
-                <View style={{ flex: 2, padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
+                <View style={{ flex: 4, padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                     {Object.entries(recipe.ingredients).map(([key, value]) => {
                         return (
                             <View style={styles.ingredientRow}>
@@ -74,6 +73,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     ingredient: {
-        
+        fontSize: 32,
     },
 })

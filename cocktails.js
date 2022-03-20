@@ -1045,7 +1045,7 @@ export const cocktails = [
         glassware: "Martini",
         ice: "",
         method: "Shake & Fine Strain",
-        garnish: "Sugar RIm & Lemon Zest",
+        garnish: "Sugar Rim & Lemon Zest",
         optional: "",
         short: "Cognac, Cointreau, Maraschino",
         ingredients: {
@@ -1070,6 +1070,23 @@ export const cocktails = [
             "Apple Liqueur": "20 ml",
             "Lime Cordial": "20 ml",
             Sprite: "Fill",
+        },
+    },
+    {
+        name: "Gin Basil Smash",
+        id: 63,
+        image: "highball-mint",
+        glassware: "Highball",
+        ice: "Cubed",
+        method: "Shake & Fine Strain",
+        garnish: "Basil Leaf",
+        optional: "",
+        short: "Gin, Basil, Lemon",
+        ingredients: {
+            Gin: "50 ml",
+            Lemon: "25 ml",
+            Sugar: "12 ml",
+            Basil: "10 leaves",
         },
     },
 ];
