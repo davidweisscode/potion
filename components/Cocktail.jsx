@@ -29,15 +29,16 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         marginHorizontal: "4%",
         marginVertical: "2%",
-        padding: "5%",
+        paddingHorizontal: "4%",
+        paddingVertical: "1%",
         backgroundColor: "lightgrey",
         borderRadius: 10,
         elevation: 10,
         shadowColor: 'white',
     },
     text: {
+        flex: 3,
         justifyContent: "center",
-        maxWidth: "80%", // workaround: wrap longer names
     },
     name: {
         fontSize: 32,
@@ -48,8 +49,8 @@ const styles = StyleSheet.create({
         fontStyle: "normal",
     },
     image: {
-        width: 110,
-        height: 110,
+        flex: 1,
+        height: 120,
         tintColor: "#000",
     }
 })

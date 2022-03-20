@@ -11,7 +11,7 @@ export function RecipeScreen({ route, navigation }) {
         <View style={styles.container}>
             <Image source={images[recipe.image]} style={styles.image}></Image>
             <Text style={styles.name}>{recipe.name}</Text>
-            <View style={{ flex: 1, width: 404 }}>
+            <View style={{ flex: 1, width: "100%" }}>
                 <View style={{ flex: 1, flexDirection: "row" }}>
                     <View style={{ flex: 1, flexDirection: "column", padding: 5, borderColor: "black", borderWidth: 1, borderStyle: "solid", borderRadius: 0, margin: 2 }}>
                         <Text style={{fontWeight: "bold"}}>Glass: </Text>
@@ -36,8 +36,8 @@ export function RecipeScreen({ route, navigation }) {
                     {Object.entries(recipe.ingredients).map(([key, value]) => {
                         return (
                             <View style={styles.ingredientRow}>
-                                <Text style={styles.ingredient} key={recipe.key}>{key}</Text>
-                                <Text style={styles.ingredient} key={recipe.key}>{value}</Text>
+                                <Text style={styles.ingredient} key={key}>{key}</Text>
+                                <Text style={styles.ingredient} key={value}>{value}</Text>
                             </View>
                         )
                     })}
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
         backgroundColor: "lightgrey",
     },
     image: {
-        width: 400,
-        height: 400,
+        width: 300,
+        height: 300,
         tintColor: "#000",
     },
     name: {
